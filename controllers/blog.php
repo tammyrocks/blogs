@@ -163,7 +163,7 @@ class BLOGS_CTRL_Blog extends OW_ActionController
             $dto->setPost($dto->getPost());
             $dto->setTitle( UTIL_String::truncate( strip_tags($dto->getTitle()), 65, '...' )  );
 
-            $text = explode("<!--more-->", $dto->getPost());
+            $text = explode("<!--more-->", UTIL_String::truncate( strip_tags($dto->getpost()), 200, "<!--more-->" )  );
 
             $isPreview = count($text) > 1;
 
